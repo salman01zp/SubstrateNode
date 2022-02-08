@@ -67,6 +67,8 @@ pub mod pallet {
 		AlreadyInitialized,
 		/// Attempted to transfer more funds than were available
 		InsufficientFunds,
+		/// If token count exceeds u64
+		TokenOverflow,
 	}
 
 	// Dispatchable functions allows users to interact with the pallet and invoke state changes.
