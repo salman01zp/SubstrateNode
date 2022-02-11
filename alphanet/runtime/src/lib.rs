@@ -290,6 +290,20 @@ impl pallet_template::Config for Runtime {
 impl basic_token::Config for Runtime {
 	type Event = Event;
 }
+
+parameter_types! {
+	pub const SubmissionDeposit: u128 = 10;
+	pub const MinContribution: u128 = 10;
+	pub const RetirementPeriod: u32 = 10;
+}
+/// Simple crowd funding
+impl pallet_crowdfund::Config for Runtime {
+	type Event = Event;
+	type Currency = Balances;
+	type SubmissionDeposit = SubmissionDeposit;
+	type MinContribution = MinContribution;
+	type RetirementPeriod = RetirementPeriod;
+}
 // Create the runtime by composing the FRAME pallets that were previously configured.
 construct_runtime!(
 	pub enum Runtime where
@@ -307,7 +321,8 @@ construct_runtime!(
 		Sudo: pallet_sudo,
 		// Include the custom logic from the pallet-template in the runtime.
 		TemplateModule: pallet_template,
-		BasicToken: basic_token
+		BasicToken: basic_token,
+		SimpleCrowdFund: pallet_crowdfund
 
 	}
 );

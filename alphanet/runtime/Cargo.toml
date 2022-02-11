@@ -196,6 +196,10 @@ version = '4.0.0-dev'
 path = "../pallets/basic-token"
 default-features = false
 
+[dependencies.pallet-crowdfund]
+path = "../pallets/pallet-crowdfund"
+default-features = false
+
 
 
 [features]
@@ -239,5 +243,6 @@ std = [
     'sp-transaction-pool/std',
     'sp-version/std',
 	"basic-token/std",
+	"pallet-crowdfund/std"
 
 ]
