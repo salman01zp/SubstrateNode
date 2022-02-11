@@ -24,7 +24,9 @@ This pallet defines a simple token creation and transfer interface.
 
 ### Errors
 -`AlreadyInitialized`
+
 -`InsufficientFunds`
+
 -`TokenOverflow`
 
 
